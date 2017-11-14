@@ -82,9 +82,9 @@ class EditPost extends Component {
                             defaultValue={post.body}
                             onChange={(e) => this.handleChange(e)} />
                     </div>
-                    <div className="create-post-details">
-                        <a className="edit-cancel" onClick={(e) => this.handleCancel(e)}>Cancel</a>
-                        <button disabled={!this.isFormValid()}>Submit Post</button>
+                    <div>
+                        <button className="btn1" onClick={(e) => this.handleCancel(e)}>Cancel</button>
+                        <button className="btn2" disabled={!this.isFormValid()}>Submit Post</button>
                     </div>
                 </form>
             </div >

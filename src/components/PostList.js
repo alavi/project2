@@ -44,7 +44,7 @@ class PostList extends Component {
 
         return (
             <div className="list-posts">
-                <Link to={`/posts/add`} className="container-text">Add new post</Link>
+                <Link to={`/posts/add`} className="container-text">Add post</Link>
                 {postList.length > 1 && <select
                     className="container-text"
                     name="category"

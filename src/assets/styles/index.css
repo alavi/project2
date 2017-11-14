@@ -1,7 +1,24 @@
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #8FBC8F;
+  padding: 5px;
+  color: white;
+}
+
+.App-title {
+  font-family: Arial;
+  font-size: 1.5em;
+  margin-left: 1.0em;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Arial;
 }
 
 html {
@@ -16,7 +33,7 @@ html, body, .root {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Arial;
   line-height: 1.5;
 }
 body, .app {
@@ -180,7 +197,7 @@ select {
 
 .post-score span {
   font-weight: bold;
-  color: blue;
+  color: green;
 }
 
 .post-details {
@@ -207,7 +224,7 @@ select {
 }
 
 .post-full-text {
-  margin: 15px 0;  
+  margin: 15px 0;
 }
 
  span {
@@ -259,7 +276,7 @@ select {
 }
 
 .post-info {
-  text-align: right;
+  text-align: left;
   font-size: .8em;
   color: rgb(159, 160, 159);
 }
@@ -294,10 +311,18 @@ select {
 .container-text {
   margin: 20px;
   display: block;
-  text-align: right;
+  text-align: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.btn1 {
+margin-bottom: 30px;
+margin-left: 150px;
+}
+.btn2 {
+margin-right: 150px;
 }

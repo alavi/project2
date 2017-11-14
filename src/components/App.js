@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/styles/App.css';
+import '../assets/styles/index.css';
 import Menu from './Menu';
 import PostList from './PostList'
 import PostDetails from './PostDetails';
@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <div>
           <header className="App-header">
-            <h1 className="App-title">Readable</h1>
+            <h1 className="App-title">Udacity Project 2 - Readable</h1>
           </header>
           <Menu />
           <div className="container">

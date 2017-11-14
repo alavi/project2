@@ -77,6 +77,7 @@ class CommentList extends Component {
                         <textarea name="body"
                             onChange={(e) => this.handleChange(e)}
                             placeholder="Type your text here" />
+                            <p></p>
                         <input name="author"
                             onChange={(e) => this.handleChange(e)}
                             type="text"

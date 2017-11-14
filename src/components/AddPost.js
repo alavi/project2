@@ -64,6 +64,7 @@ class AddPost extends Component {
             <div>
                 {!this.isFormValid() && this.state.showErrorMsg && <div className="error-msg text-center">Fill all form fiels</div>}
                 <form className="create-post-form" onSubmit={this.handleSubmit}>
+
                     <div className="create-post-details">
                         <input type="text"
                             name="title"
@@ -71,7 +72,7 @@ class AddPost extends Component {
                             onChange={(e) => this.handleChange(e)} />
                         <textarea name="body"
                             onChange={(e) => this.handleChange(e)}
-                            placeholder="Type your text here"/>
+                            placeholder="Type your post body here"/>
                         <input type="text"
                             onChange={(e) => this.handleChange(e)}
                             name="author"
@@ -87,6 +88,7 @@ class AddPost extends Component {
                     <div className="create-post-details">
                         <button>Add Post</button>
                     </div>
+
                 </form>
             </div >
         )

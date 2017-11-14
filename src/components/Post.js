@@ -53,15 +53,17 @@ class Post extends Component {
         return (
             <div>
                 <li className="post-list-item">
-                    <div className="post-voting-box" >
-                        <button className="post-upvote"
-                            onClick={(e) => this.votePost(e, id, "upVote")}>Upvote</button>
-                        <div className="post-score">
-                            <p>Score: <span>{voteScore}</span></p>
-                        </div>
-                        <button className="post-downvote"
-                            onClick={(e) => this.votePost(e, id, "downVote")} >Downvote</button>
+                <div className="post-voting-box" >
+                    <button onClick={(e) => this.votePost(e, id, "upVote")} >
+                      + Upvote
+                    </button>
+                    <div className="post-score">
+                        <p>Score: <span>{voteScore}</span></p>
                     </div>
+                  <button onClick={(e) => this.votePost(e, id, "downVote")} >
+                    - Downvote
+                  </button>
+                </div>
                     <div className="post-details">
                         <div className="post-info">
                             <span className="post-author">Author: {author}</span>
