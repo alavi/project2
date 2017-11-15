@@ -71,7 +71,6 @@ class EditComment extends Component {
                     </div>
                     <div>
                         <button className="btn1" onClick={(e) => this.handleCancel(e)}>Cancel</button>
-
                         <button className="btn2" disabled={!this.isFormValid()}>Submit Comment</button>
                     </div>
                 </form>

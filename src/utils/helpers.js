@@ -5,7 +5,7 @@ export function capitalize (str = '') {
     : str[0].toUpperCase() + str.slice(1)
 }
 
-function create_UUID(){
+export function create_UUID(){
     var dt = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = (dt + Math.random()*16)%16 | 0;

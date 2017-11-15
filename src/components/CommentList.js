@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Comment from './Comment';
 import { connect } from 'react-redux';
 import { getPostComments, addComment } from '../actions';
-import { uuid } from '../utils/helpers';
+import { create_UUID } from '../utils/helpers';
 import serializeForm from 'form-serialize';
 
 class CommentList extends Component {
@@ -23,7 +23,7 @@ class CommentList extends Component {
         if (this.isFormValid()) {
             e.preventDefault();
             const values = serializeForm(e.target, { hash: true })
-            values["id"] = uuid();
+            values["id"] = create_UUID();
             values["timestamp"] = Date.now();
             values["parentId"] = this.props.postId;
             this.props.addComment(values);
@@ -67,24 +67,24 @@ class CommentList extends Component {
                             sortedComments.map((comment, i) => (
                                 <Comment key={i} comment={comment} />
                             ))
-                            : (<div className="no-results">There is no comments on this post, you can be the first to add comment.</div>)
+                            : (<div className="no-results">This is the first comment on this post.</div>)
                     }
                 </ol>
                 <form
                     className="container-text create-comment"
                     onSubmit={this.handleSubmit}>
                     <div>
+
+                    <input name="author"
+                        onChange={(e) => this.handleChange(e)}
+                        type="text"
+                        placeholder="Athor" />
+                        <p></p>
                         <textarea name="body"
                             onChange={(e) => this.handleChange(e)}
-                            placeholder="Type your text here" />
-                            <p></p>
-                        <input name="author"
-                            onChange={(e) => this.handleChange(e)}
-                            type="text"
-                            placeholder="Athor" />
-
+                            placeholder="Type your comment here" />
                     </div>
-                    <div className="create-post-details">
+                    <div className="btn2">
                         <button disabled={!this.isFormValid()}>Add Comment</button>
                     </div>
                 </form>

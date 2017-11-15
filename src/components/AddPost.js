@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import serializeForm from 'form-serialize';
 import { connect } from 'react-redux';
 import { addPost } from '../actions';
-import { uuid } from '../utils/helpers';
+import { create_UUID } from '../utils/helpers';
 
 class AddPost extends Component {
     state = {
@@ -26,7 +26,7 @@ class AddPost extends Component {
         })
         if (this.isFormValid()) {
             const values = serializeForm(e.target, { hash: true })
-            values["id"] = uuid();
+            values["id"] = create_UUID();
             values["timestamp"] = Date.now();
             this.props.addPost(values);
         }
@@ -85,7 +85,7 @@ class AddPost extends Component {
                             }
                         </select>
                     </div>
-                    <div className="create-post-details">
+                    <div className="btn2">
                         <button>Add Post</button>
                     </div>
 
