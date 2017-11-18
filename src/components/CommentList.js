@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Comment from './Comment';
 import { connect } from 'react-redux';
 import { getPostComments, addComment } from '../actions';
-import { create_UUID } from '../utils/helpers';
+import { create_UUID } from '../utils/api';
 import serializeForm from 'form-serialize';
 
 class CommentList extends Component {

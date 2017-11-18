@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import serializeForm from 'form-serialize';
 import { connect } from 'react-redux';
 import { addPost } from '../actions';
-import { create_UUID } from '../utils/helpers';
+import { create_UUID } from '../utils/api';
 
 class AddPost extends Component {
     state = {

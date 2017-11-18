@@ -1,7 +1,7 @@
 
 const url = 'http://localhost:3001'
 
-// Generate a unique token for storing your bookshelf data on the backend server.
+// Generate a unique token for storing your data on the backend server.
 let token = localStorage.token
 if (!token)
   token = localStorage.token = Math.random().toString(36).substr(-8)
@@ -11,7 +11,7 @@ const headers = {
     'Authorization': token
 }
 
-function create_UUID(){
+export function create_UUID(){
     var dt = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = (dt + Math.random()*16)%16 | 0;
@@ -20,8 +20,6 @@ function create_UUID(){
     });
     return uuid;
 }
-
-
 
 export const getCategoryPosts = (category) => (
     fetch(`${url}/${category}/posts`, { headers })
@@ -34,7 +32,6 @@ export const getAllPosts = () => (
 );
 
 export const fetchCategories = () => {
-//console.log("API: inside fetchCategories")
  const u = `${url}/categories`
  return fetch(u, { headers} )
    .then( res => res.text() )
@@ -46,12 +43,10 @@ export const fetchPostsByCategory = (category) => {
  return fetch(u, { headers: headers} )
   .then(res => res.json())
 }
-///
 
 export const fetchPostById = (postId) => (
   fetch(`${url}/posts/${postId}`, { headers })
     .then(res => res.json())
-  //  .then(data => data.post)
 );
 
 export const votePost = (id, values) => (
@@ -64,32 +59,7 @@ export const votePost = (id, values) => (
     body: JSON.stringify(values)
     }).then(res => res.json())
   )
-   //.then(res => res.json())
 
-/*
-  export const voteUpPostById = (id,vote) =>
-    fetch(`${url}/posts/${id}`, {
-      method: 'POST',
-      headers: {
-        ...headers,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ voteScore:vote + 1
-       })
-    }).then(res => res.json())
-*/
-/*
-export const voteCommentById = (id,vote) =>
-  fetch(`${url}/comments/${id}`, {
-    method: 'POST',
-    headers: {
-      ...headers,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ voteScore:vote
-     })
-  }).then(res => res.json())
-*/
   export const voteComment = (id, option) => (
     fetch(`${url}/comments/${id}`, {
       method: 'POST',
@@ -101,6 +71,7 @@ export const voteCommentById = (id,vote) =>
     }).then(res => res.json())
 
 )
+
 export const updatePostById = (id,title,body) =>
   fetch(`${url}/posts/${id}`, {
     method: 'PUT',
@@ -139,8 +110,6 @@ export const updateCommentById = (id,body) =>
        })
     }).then(res => res.json())
 
-//Sets the deleted flag for a post to 'true'.
-//Sets the parentDeleted flag for all child comments to 'true'.
 export const deletePostById = (id) =>
   fetch(`${url}/posts/${id}`, {
     method: 'PUT',
@@ -168,7 +137,6 @@ export const fetchPostCommentsCount = (id) => (
 export const fetchCommentById = (commentId) => (
   fetch(`${url}/comments/${commentId}`, { headers })
     .then(res => res.json())
-    //.then(data => data.comment)
 );
 
 export const fetchPost = (id) => (
@@ -187,24 +155,7 @@ export const addPost = (body) => (
     }).then(res => res.json())
 )
 
-/*
-export const addPost = (title, body, author, category) =>
-  fetch(`${url}/posts`, {
-    method: 'POST',
-    headers: {
-      ...headers,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      id:create_UUID(),
-      title:title,
-      body:body,
-      author:author,
-      category:category
-     })
-  }).then(res => res.json())
-*/
-  export const editPost = (id, body) => (
+export const editPost = (id, body) => (
     fetch(`${url}/posts/${id}`, {
       method: 'PUT',
       headers: {
@@ -259,13 +210,11 @@ export const editComment = (id, body) => (
     }).then(res => res.json())
   );
 
-
 export const getAllCategories = () => (
     fetch(`${url}/categories`, { headers })
         .then(res => res.json())
         .then(res => res.categories)
 );
-
 
 export const voteUpCommentById = (id,vote) =>
   fetch(`${url}/comments/${id}`, {

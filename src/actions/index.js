@@ -2,8 +2,6 @@ import * as ReadableAPI from '../utils/api';
 import { push } from 'react-router-redux'
 //import fetch from 'isomorphic-fetch'
 
-
-
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const GET_ALL_POSTS = 'GET_ALL_POSTS';
 export const GET_POST = 'GET_POST';
@@ -11,7 +9,6 @@ export const ADD_POST = 'ADD_POST';
 export const DELETE_POST = 'DELETE_POST';
 export const VOTE_POST = 'VOTE_POST';
 export const EDIT_POST = 'EDIT_POST';
-
 export const GET_COMMENT = 'GET_COMMENT';
 export const GET_POST_COMMENTS = 'GET_POST_COMMENTS';
 export const ADD_COMMENT = 'ADD_COMMENT';
@@ -21,7 +18,6 @@ export const VOTE_COMMENT = 'VOTE_COMMENT';
 export const GET_POST_COMMENTS_COUNT = 'GET_POST_COMMENTS_COUNT'
 export const SORT_POSTS_BY_DATE = 'SORT_POSTS_BY_DATE';
 export const SORT_POSTS_BY_SCORE = 'SORT_POSTS_BY_SCORE';
-
 export const IS_LOADING = 'ITEM_IS_LOADING';
 export const HAS_ERROR = 'ITEM_HAS_ERROR';
 export const FETCH_DATA_SUCCESS = 'ITEMS_FETCH_DATA_SUCCESS';

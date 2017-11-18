@@ -21,9 +21,9 @@ const middleware = [
   logger
 ]
 
-//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 const environment = 'development'
-//if (process.env.NODE_ENV === 'development') {
+
 if (environment  === 'development') {
   const devToolsExtension = window.devToolsExtension
 
